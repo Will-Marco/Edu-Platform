@@ -1,14 +1,12 @@
 import { Button } from "@mui/material";
 import Head from "next/head";
+import Layout from "./layout/Layout";
 
 const index = () => {
   return (
-    <>
-      <Head>
-        <title>Edu-Platform</title>
-      </Head>
+    <Layout>
       <Button>Click</Button>
-    </>
+    </Layout>
   );
 };
 

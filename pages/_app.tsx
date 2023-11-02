@@ -26,5 +26,5 @@ export default function App(props: MyAppProps) {
         <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>
-  );
+  );``
 }
