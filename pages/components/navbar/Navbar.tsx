@@ -17,7 +17,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import SchoolIcon from "@mui/icons-material/School";
 import { NavbarProps } from "./navbar.props";
-import { navItems } from "../config/constants";
+import { navItems } from "../../config/constants";
 
 const Navbar = ({ window }: NavbarProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
