@@ -1,11 +1,10 @@
-import { Button } from "@mui/material";
-import Head from "next/head";
 import Layout from "./layout/Layout";
+import { Hero } from "./components";
 
 const index = () => {
   return (
     <Layout>
-      <Button>Click</Button>
+      <Hero />
     </Layout>
   );
 };
