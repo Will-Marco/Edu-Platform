@@ -36,7 +36,7 @@ const Hero = () => {
                   backgroundColor: "rgba(0, 0, 0, .6)",
                 }}
               />
-              <Box
+              <Box 
                 width={{ xs: "100%", sm: "70%" }}
                 position={"relative"}
                 color={"white"}
