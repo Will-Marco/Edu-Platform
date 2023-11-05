@@ -6,7 +6,14 @@ const index = () => {
   return (
     <Layout>
       <Hero />
-      <Box sx={{ display: "flex", gap: "20px", padding: "20px" }}>
+      <Box
+        sx={{
+          padding: "20px",
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: "20px",
+        }}
+      >
         <Sidebar />
         <Content />
       </Box>
