@@ -6,7 +6,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <div>
       <Navbar />
-      <Box height={"90vh"}>{children}</Box>
+      <Box minHeight={"90vh"}>{children}</Box>
       <Footer />
     </div>
   );

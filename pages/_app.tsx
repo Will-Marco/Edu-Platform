@@ -5,8 +5,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Head from "next/head";
 import createEmotionCache from "./helpers/create-emotion-cache";
 import theme from "./helpers/theme";
-import "@/styles/globals.css";
-
 const clientSideEmotionCache = createEmotionCache();
 
 export interface MyAppProps extends AppProps {
