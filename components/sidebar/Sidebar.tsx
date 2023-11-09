@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
-import { navItems } from "@/pages/config/constants";
+import { navItems } from "@/config/constants";
 import { format } from "date-fns";
 
 const Sidebar = () => {
   return (
-    <Box width={{ xs: '100%', md: '30%' }}>
+    <Box width={{ xs: "100%", md: "30%" }}>
       <Box
         position={"sticky"}
         top={"100px"}

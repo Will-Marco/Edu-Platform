@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
-import { Content, Hero, Sidebar } from "./components";
-import Layout from "./layout/Layout";
+import { Content, Hero, Sidebar } from "../components";
+import Layout from "../layout/Layout";
 
 const index = () => {
   return (

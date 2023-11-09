@@ -3,8 +3,8 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Head from "next/head";
-import createEmotionCache from "./helpers/create-emotion-cache";
-import theme from "./helpers/theme";
+import createEmotionCache from "../helpers/create-emotion-cache";
+import theme from "../helpers/theme";
 const clientSideEmotionCache = createEmotionCache();
 
 export interface MyAppProps extends AppProps {
@@ -24,5 +24,6 @@ export default function App(props: MyAppProps) {
         <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>
-  );``
+  );
+  ``;
 }
