@@ -30,6 +30,9 @@ export const BlogsService = {
               }
             }
           }
+          description {
+            text
+          }
         }
       }
     `;
@@ -56,6 +59,9 @@ export const BlogsService = {
                 url
               }
             }
+          }
+          description {
+            text
           }
         }
       }
