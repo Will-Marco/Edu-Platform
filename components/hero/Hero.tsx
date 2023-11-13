@@ -6,7 +6,6 @@ import { format } from "date-fns";
 import { HeroProps } from "./hero.props";
 
 const Hero = ({ blogs }: HeroProps) => {
-
   return (
     <Box width={"100%"} height={"70vh"} sx={{ backgroundColor: "red" }}>
       <Carousel
@@ -59,10 +58,7 @@ const Hero = ({ blogs }: HeroProps) => {
                   {item.excerpt}
                 </Typography>
                 <Box sx={{ display: "flex", gap: "10px", marginTop: "20px" }}>
-                  <Avatar
-                    alt={item.author.name}
-                    src={item.author.avatar.url}
-                  />
+                  <Avatar alt={item.author.name} src={item?.author?.avatar?.url} />
                   <Box>
                     <Typography>{item.author.name}</Typography>
                     <Box>

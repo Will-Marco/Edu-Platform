@@ -37,10 +37,7 @@ const Content = ({ blogs }: ContentProps) => {
           </Typography>
           <Divider sx={{ marginTop: "30px" }} />
           <Box sx={{ display: "flex", gap: "10px", marginTop: "20px" }}>
-            <Avatar
-              alt={item.author.name}
-              src={item.author.avatar.url}
-            />
+            <Avatar alt={item.author.name} src={item?.author?.avatar?.url} />
             <Box>
               <Typography>{item.author.name}</Typography>
               <Box color={"gray"}>
