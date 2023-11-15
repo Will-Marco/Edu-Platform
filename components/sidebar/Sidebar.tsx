@@ -3,8 +3,11 @@ import Image from "next/image";
 import { Avatar, Box, Button, Divider, Typography } from "@mui/material";
 import { format } from "date-fns";
 import { SidebarProps } from "./sidebar.props";
+import { useRouter } from "next/router";
 
 const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
+	const router = useRouter();
+
   return (
     <Box width={{ xs: "100%", md: "30%" }}>
       <Box
@@ -18,7 +21,7 @@ const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
             sx={{ display: "flex", flexDirection: "column", marginTop: "20px" }}
           >
             {latestBlogs.map((item) => (
-              <Box key={item.title} marginTop={"20px"}>
+              <Box key={item.title} marginTop={"20px"} sx={{ cursor: 'pointer' }} onClick={() => router.push(`/blog/${item.slug}`)}>
                 <Box
                   sx={{ display: "flex", gap: "20px", alignItems: "center" }}
                 >

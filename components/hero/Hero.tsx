@@ -5,8 +5,11 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { HeroProps } from "./hero.props";
 import { calculateEstimatedTimeToRead } from "@/helpers/time.format";
+import { useRouter } from "next/router";
 
 const Hero = ({ blogs }: HeroProps) => {
+  const router = useRouter();
+
   return (
     <Box width={"100%"} height={"70vh"} sx={{ backgroundColor: "red" }}>
       <Carousel
@@ -18,7 +21,11 @@ const Hero = ({ blogs }: HeroProps) => {
         }}
       >
         {blogs.map((item) => (
-          <Box key={item.id}>
+          <Box
+            key={item.id}
+            sx={{ cursor: "pointer" }}
+            onClick={() => router.push(`/blog/${item.slug}`)}
+          >
             <Box sx={{ position: "relative", width: "100%", height: "70vh" }}>
               <Image
                 src={item.image.url}
@@ -61,14 +68,15 @@ const Hero = ({ blogs }: HeroProps) => {
                 <Box sx={{ display: "flex", gap: "10px", marginTop: "20px" }}>
                   <Avatar
                     alt={item.author.name}
-                    src={item?.author?.avatar?.url} 
+                    src={item?.author?.avatar?.url}
                   />
                   <Box>
                     <Typography>{item.author.name}</Typography>
                     <Box>
                       {format(new Date(item.createdAt), "dd MMM, yyyy")}{" "}
                       &#x2022;{" "}
-                      {calculateEstimatedTimeToRead(item.description.text)} min read
+                      {calculateEstimatedTimeToRead(item.description.text)} min
+                      read
                     </Box>
                   </Box>
                 </Box>
