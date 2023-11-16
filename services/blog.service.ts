@@ -123,4 +123,39 @@ export const BlogsService = {
     });
     return result.blog;
   },
+
+  async getDetaieldCateogriesBlog(slug: string) {
+		const query = gql`
+			query getCategoriesBlog($slug: String!) {
+				blogs(where: { category: { slug: $slug } }) {
+					excerpt
+					id
+					slug
+					title
+					createdAt
+					image {
+						url
+					}
+					author {
+            ... on Author {
+              name
+              avatar {
+                url
+              }
+            }
+          }
+					category {
+						label
+						slug
+					}
+					description {
+						text
+					}
+				}
+			}
+		`;
+
+		const result = await request<{ blogs: BlogsType[] }>(graphqlAPI, query, { slug });
+		return result.blogs;
+	},
 };
