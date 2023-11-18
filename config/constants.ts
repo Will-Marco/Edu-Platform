@@ -5,10 +5,10 @@ export const navItems = [
   },
   {
     route: "/category",
-    label: "Category",
+    label: "Categories",
   },
   {
-    route: "/blogs",
+    route: "/blog",
     label: "Blogs",
   },
 ];

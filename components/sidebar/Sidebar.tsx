@@ -64,7 +64,7 @@ const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
           border={"1px solid gray"}
           borderRadius={"8px"}
         >
-          <Typography variant="h5">Category</Typography>
+          <Typography variant="h5">Categories</Typography>
           <Box
             sx={{ display: "flex", flexDirection: "column", marginTop: "20px" }}
           >

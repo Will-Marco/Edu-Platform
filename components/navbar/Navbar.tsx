@@ -18,9 +18,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import SchoolIcon from "@mui/icons-material/School";
 import { NavbarProps } from "./navbar.props";
 import { navItems } from "../../config/constants";
+import { useRouter } from "next/router";
 
 const Navbar = ({ window }: NavbarProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const router = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -89,7 +91,11 @@ const Navbar = ({ window }: NavbarProps) => {
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item.route} sx={{ color: "#fff" }}>
+              <Button
+                key={item.route}
+                sx={{ color: "#fff" }}
+                onClick={() => router.push(item.route)}
+              >
                 {item.label}
               </Button>
             ))}

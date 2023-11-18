@@ -31,7 +31,7 @@ export default CategoryDetailedPage;
 
 export const getServerSideProps: GetServerSideProps<
   DetailedCategoriesPageProps
-> = async ({ query }) => {
+> = async ({ query }) => { 
   const blogs = await BlogsService.getDetaieldCateogriesBlog(query.slug as string);
   const latestBlogs = await BlogsService.getLatestBlog();
   const categories = await BlogsService.getCategories();
