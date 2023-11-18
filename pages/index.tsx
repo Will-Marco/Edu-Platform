@@ -5,9 +5,11 @@ import Layout from "../layout/Layout";
 import { BlogsType } from "@/interfaces/blogs.interface";
 import { CategoryType } from "@/interfaces/categories.interface";
 import { BlogsService } from "@/services/blog.service";
+import SEO from "@/layout/seo/Seo";
 
 const Index = ({ blogs, latestBlogs, categories }: HomePageProps) => {
   return (
+	<SEO>
     <Layout>
       <Hero blogs={blogs.slice(0, 3)} />
       <Box sx={{ display: "flex", gap: "20px", flexDirection: { xs: "column", md: "row" }, padding: "20px" }}>
@@ -15,6 +17,7 @@ const Index = ({ blogs, latestBlogs, categories }: HomePageProps) => {
 		<Content blogs={blogs} />
       </Box>
     </Layout>
+	</SEO>
   );
 };
 
