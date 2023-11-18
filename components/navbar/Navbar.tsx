@@ -29,7 +29,7 @@ const Navbar = ({ window }: NavbarProps) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box sx={{ textAlign: "center" }}>
       <Box
         sx={{
           px: "20px",
@@ -40,17 +40,20 @@ const Navbar = ({ window }: NavbarProps) => {
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <SchoolIcon />
-          <Typography variant="h6" sx={{ my: 2 }}>
+          <Typography variant="h4" sx={{ my: 2 }} paddingLeft={'7px'}>
             Edu-P
           </Typography>
         </Box>
-        <CloseIcon />
+        <CloseIcon onClick={handleDrawerToggle} sx={{ cursor: "pointer" }} />
       </Box>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item.route} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              onClick={() => router.push(item.route)}
+              sx={{ textAlign: "center" }}
+            >
               <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
@@ -63,9 +66,9 @@ const Navbar = ({ window }: NavbarProps) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box height={"10vh"} sx={{ display: "flex" }}>
+    <Box height={"9vh"} sx={{ display: "flex" }}>
       <AppBar
-        sx={{ height: "10vh", backgroundColor: "#141414" }}
+        sx={{ height: "9vh", backgroundColor: "#141414" }}
         component="nav"
       >
         <Toolbar>
@@ -79,15 +82,18 @@ const Navbar = ({ window }: NavbarProps) => {
             <MenuIcon />
           </IconButton>
           <Box
+            onClick={() => router.push("/")}
             sx={{
-              flexGrow: 1,
-              display: { xs: "none", sm: "flex" },
+              my: 2,
+              display: "flex",
               alignItems: "center",
-              gap: "10px",
+              gap: "5px",
+              flexGrow: 1,
+              cursor: "pointer",
             }}
           >
             <SchoolIcon />
-            <Typography variant="h6">Edu-P</Typography>
+            <Typography variant="h4" paddingLeft={'7px'}>Edu-P</Typography>
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
