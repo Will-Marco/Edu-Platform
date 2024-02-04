@@ -4,10 +4,17 @@ import { format } from "date-fns";
 import Layout from "@/layout/Layout";
 import { Sidebar } from "@/components";
 import { calculateEstimatedTimeToRead } from "@/helpers/time.format";
-import { DetailedBlogsPageProps } from "./detailedBlogsProps";
 import { GetServerSideProps } from "next";
 import { BlogsService } from "@/services/blog.service";
 import SEO from "@/layout/seo/Seo";
+import { BlogsType } from "@/interfaces/blogs.interface";
+import { CategoryType } from "@/interfaces/categories.interface";
+
+interface DetailedBlogsPageProps {
+  blog: BlogsType,
+  latestBlogs: BlogsType[],
+  categories: CategoryType[],
+}
 
 const DetailedBlogPage = ({
   blog,

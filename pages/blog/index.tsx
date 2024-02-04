@@ -6,7 +6,7 @@ import { BlogsService } from "@/services/blog.service";
 import { BlogsType } from "@/interfaces/blogs.interface";
 import SEO from "@/layout/seo/Seo";
 
-const CategoryPage = ({ blogs }: BlogPageProps) => {
+const BlogPage = ({ blogs }: BlogPageProps) => {
   return (
     <SEO metaTitle="All Blogs">
       <Layout>
@@ -26,7 +26,7 @@ const CategoryPage = ({ blogs }: BlogPageProps) => {
   );
 };
 
-export default CategoryPage;
+export default BlogPage;
 
 export const getServerSideProps: GetServerSideProps<
   BlogPageProps

@@ -1,11 +1,18 @@
 import { Content, Sidebar } from "@/components";
 import Layout from "@/layout/Layout";
 import { Box } from "@mui/material";
-import { DetailedCategoriesPageProps } from "./categoryDetailedPageProps";
 import { GetServerSideProps } from "next";
 import { BlogsService } from "@/services/blog.service";
 import SEO from "@/layout/seo/Seo";
 import { useRouter } from "next/router";
+import { BlogsType } from "@/interfaces/blogs.interface";
+import { CategoryType } from "@/interfaces/categories.interface";
+
+interface DetailedCategoriesPageProps {
+	blogs: BlogsType[];
+	latestBlogs: BlogsType[];
+	categories: CategoryType[];
+}
 
 const CategoryDetailedPage = ({
   blogs,
